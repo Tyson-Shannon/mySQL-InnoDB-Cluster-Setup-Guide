@@ -161,7 +161,7 @@ sudo systemctl start mysql
 ```
 If nodes don't connect automatically you can add them back or reboot whole cluster
 ```python
-cluster.rejoinInstance('clusteradmin@192.168.56.102:3306')
+cluster.rejoinInstance('clusteradmin@192.168.56.104:3306')
 dba.rebootClusterFromCompleteOutage()
 ```
 
