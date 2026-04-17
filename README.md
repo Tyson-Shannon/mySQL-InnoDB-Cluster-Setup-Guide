@@ -55,7 +55,7 @@ Configure mySQL for InnoDB on all nodes
 ```CLI
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
-Under [mysqld] add for each host using thier ip
+Under [mysqld] add for each host using thier own ip
 ```CLI
 report_host=192.168.56.100
 ```
