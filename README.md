@@ -191,6 +191,23 @@ session.run_sql("SELECT * FROM users;")
 \exit
 ```
 
+## Reconnecting Cluster After Shutdown
+On nodes 1-3 (in order)
+```CLI
+sudo systemctl start mysql
+```
+On primary node (VM1 ONLY)
+```CLI
+mysqlsh
+```
+```python
+shell.connect('clusteradmin@192.168.56.100:3306')
+dba.reboot_cluster_from_complete_outage()
+cluster = dba.get_cluster()
+cluster.status()
+```
+*NOTE: if a node is not online and reachable you will get an error rebooting the cluster, turn on node and start it's mysql to fix*
+
 ## Connect mySQL Workbench
 ### Using a direct connection
 In MySQL Workbench:
